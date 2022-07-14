@@ -4,22 +4,22 @@
 import re
 
 def domain_name(url):
-    
+
     regexp_url = r'^(https?://|[a-zA-Z0-9-]+\.)([a-zA-Z0-9-]+)\.([a-zA-Z0-9-]+).*$'
-    
+
     string = re.search(regexp_url, url)
-    
+
     if string :
         plain = string.group(0)
         protocol = string.group(1)
         domain = plain.replace(protocol, '')
-        
+
         pattern = ''.join(domain.split('.')[0].split('/')[0])
         domain_name = pattern
         return domain_name
-        
-        
-        
+
+
+
 
 # Driver Code
 
